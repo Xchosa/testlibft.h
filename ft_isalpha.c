@@ -6,14 +6,16 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:14:56 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 16:49:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:03:48 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
 /*
-The C ctype library isalpha() function is used to check if a given character is an alphabetic letter or not. If argument 
+The C ctype library isalpha() function is 
+used to check if a given character is an alphabetic 
+letter or not. If argument 
 c is not an alphabetic letter, the function returns 0 (false).
 */
 int	ft_isalpha(char a)

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:58:51 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 16:50:40 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:11:43 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ RETURN VALUES
 */
 #include "./libft.h"
 
-int	*ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
@@ -36,11 +36,11 @@ int	*ft_tolower(int c)
 	return (c);
 }
 
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		int *a = ft_tolower(argv[1][0]);
-		printf("%c", a);
-	}
-}
+// int	main(int argc, char **argv)
+// {
+// 	if (argc == 2)
+// 	{
+// 		int *a = ft_tolower(argv[1][0]);
+// 		printf("%c", a);
+// 	}
+// }

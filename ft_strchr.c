@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:14 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/09 10:40:42 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:05:19 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,17 @@ char	*ft_strchr(char *str, int c)
 	}
 	return (0);
 }
-int	main(int argc, char **argv)
-{
-	char *result;
-	char c;
-	c = '4';
 
-	if (argc == 2)
-	{
-		result = ft_strchr(argv[1], c);
-		printf("%c", result);
-	}
-	return (0);
-}
+// int	main(int argc, char **argv)
+// {
+// 	char *result;
+// 	char c;
+// 	c = '4';
+
+// 	if (argc == 2)
+// 	{
+// 		result = ft_strchr(argv[1], c);
+// 		printf("%c", result);
+// 	}
+// 	return (0);
+// }

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:52:57 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 16:50:17 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:05:33 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void	ft_strlcpy(char *dest, char *src)
 	dest[i] = '\0';
 }
 
-int	main(int argc, char **argv)
-{
-	char a[100];
-	if (argc == 2)
-	{
-		printf("%s\n empty", a);
-		ft_strlcpy(a, argv[1]);
-		printf("%s, after", a);
-	}
-	return (0);
-}
+// int	main(int argc, char **argv)
+// {
+// 	char a[100];
+// 	if (argc == 2)
+// 	{
+// 		printf("%s\n empty", a);
+// 		ft_strlcpy(a, argv[1]);
+// 		printf("%s, after", a);
+// 	}
+// 	return (0);
+// }

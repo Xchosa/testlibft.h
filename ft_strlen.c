@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:19:42 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 16:50:21 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:05:38 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
      first maxlen bytes of s.
 */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -30,14 +30,14 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	main(int argc, char **argv)
-{
-	int	a;
+// int	main(int argc, char **argv)
+// {
+// 	int	a;
 
-	if (argc == 2)
-	{
-		a = ft_strlen(argv[1]);
-		printf("%d", a);
-	}
-	return (0);
-}
+// 	if (argc == 2)
+// 	{
+// 		a = ft_strlen(argv[1]);
+// 		printf("%d", a);
+// 	}
+// 	return (0);
+// }

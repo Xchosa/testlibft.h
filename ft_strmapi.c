@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:32:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 16:50:25 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:05:44 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ char	f(unsigned int index, char c)
 	return (c);
 }
 
-int	main(void)
-{
-	char			str[];
-	unsigned int	test;
-	char			*newstr;
+// int	main(void)
+// {
+// 	char			str[];
+// 	unsigned int	test;
+// 	char			*newstr;
 
-	str[] = "hello world";
-	test = 5;
-	newstr = ft_strmapi(str, f);
-	printf("%s\n", str);
-	free(newstr);
-	return (0);
-}
+// 	str[] = "hello world";
+// 	test = 5;
+// 	newstr = ft_strmapi(str, f);
+// 	printf("%s\n", str);
+// 	free(newstr);
+// 	return (0);
+// }
 
 // Applies the function f to each character
 //  of the string s, passing its index as the

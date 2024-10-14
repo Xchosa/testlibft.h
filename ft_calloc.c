@@ -6,13 +6,13 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:08:42 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 12:23:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:03:30 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*ptr;
 	size_t			i;
@@ -26,6 +26,7 @@ void	*calloc(size_t count, size_t size)
 	ft_bzero(ptr, i);
 	return (ptr);
 }
+
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*prt;

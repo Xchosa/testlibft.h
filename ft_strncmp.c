@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:40:37 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 15:23:54 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:09:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ int	main(void)
 {
 	const char *str1 = "hello";
 	const char *str2 = "hella";
+	size_t u = 4;
 
-	int result = ft_strncmp(str1, str2, 4); // Compare the first 4 characters
-	if (result == 0)
-		printf("The strings are equal up to 4 characters.\n");
+	int result = ft_strncmp(str1, str2, u);
+		printf("The strings are equal up to %ld characters.\n", u);
 	else if (result < 0)
 		printf("str1 is less than str2.\n");
 	else

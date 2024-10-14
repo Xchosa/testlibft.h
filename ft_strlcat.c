@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:32:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/09 10:40:48 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:05:28 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ char	*ft_strlcat(char *dest, char *src)
 	return (dest);
 }
 
-int	main(int argc, char **argv)
-{
-	char	a[100];
+// int	main(int argc, char **argv)
+// {
+// 	char	a[100];
 
-	a[100] = "Hallo";
-	if (argc == 2)
-	{
-		printf("%s\n", a);
-		ft_strlcat(a, argv[1]);
-		printf("%s", a);
-	}
-	return (0);
-}
+// 	a[100] = "Hallo";
+// 	if (argc == 2)
+// 	{
+// 		printf("%s\n", a);
+// 		ft_strlcat(a, argv[1]);
+// 		printf("%s", a);
+// 	}
+// 	return (0);
+// }

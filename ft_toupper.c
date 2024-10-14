@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:32:54 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/10 16:50:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:10:53 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ RETURN VALUES
      is returned unchanged.
 */
 
-int	*ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

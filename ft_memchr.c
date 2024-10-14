@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:31:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 15:12:25 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:04:39 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int	main(void)
-{
-	char str[] = "hello";
-	int c = 'e';
-	char *result;
+// int	main(void)
+// {
+// 	char str[] = "hello";
+// 	int c = 'e';
+// 	char *result;
 
-	result = memchr(str, c, 10);
-	return (0);
-}
+// 	result = memchr(str, c, 10);
+// 	return (0);
+// }
