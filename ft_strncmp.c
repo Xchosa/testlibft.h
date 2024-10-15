@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:40:37 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:09:04 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:18:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,19 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-int	main(void)
-{
-	const char *str1 = "hello";
-	const char *str2 = "hella";
-	size_t u = 4;
 
-	int result = ft_strncmp(str1, str2, u);
-		printf("The strings are equal up to %ld characters.\n", u);
-	else if (result < 0)
-		printf("str1 is less than str2.\n");
-	else
-		printf("str1 is greater than str2.\n");
+// int	main(void)
+// {
+// 	const char *str1 = "hello";
+// 	const char *str2 = "hella";
+// 	size_t u = 4;
 
-	return (0);
-}
+// 	int result = ft_strncmp(str1, str2, u);
+// 		printf("The strings are equal up to %ld characters.\n", u);
+// 	else if (result < 0)
+// 		printf("str1 is less than str2.\n");
+// 	else
+// 		printf("str1 is greater than str2.\n");
+
+// 	return (0);
+// }

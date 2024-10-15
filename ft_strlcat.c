@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:32:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:05:28 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:37:05 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,35 +21,26 @@
 
      If the src and dst strings overlap, the behavior is undefined.
 */
-int	ft_strlen( char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strlcat(char *dest, char *src)
-{
-	int	len;
-	int	lendest;
-	int	i;
+	size_t	len;
+	size_t	lendest;
+	size_t	i;
 
 	i = 0;
 	len = ft_strlen(src);
-	lendest = ft_strlen(dest);
+	lendest = ft_strlen(dst);
+	if (lendest > dstsize || dstsize == '\0')
+	{
+		return (1);
+	}
 	while (i < len)
 	{
-		dest[lendest] = src[i];
+		dst[lendest + i] = src[i];
 		i++;
-		lendest++;
 	}
-	dest[lendest] = '\0';
-	return (dest);
+	dst[lendest + i] = '\0';
+	return (lendest + i);
 }
 
 // int	main(int argc, char **argv)

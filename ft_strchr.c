@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:14 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:05:19 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:41:44 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ RETURN VALUES
      acter, or NULL if the character does not appear in the string.
 */
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
 	if (c == '\0')
 	{
-		return (&str[i]);
+		return ((char *)&s[i]);
 	}
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (str[i] == c)
+		if (s[i] == c)
 		{
-			return (&str[i]);
+			return ((char *)&s[i]);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:14:56 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:03:48 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:42:20 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ used to check if a given character is an alphabetic
 letter or not. If argument 
 c is not an alphabetic letter, the function returns 0 (false).
 */
-int	ft_isalpha(char a)
+int	ft_isalpha(int a)
 {
 	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
 	{

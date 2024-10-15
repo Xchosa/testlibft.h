@@ -6,11 +6,12 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:39:06 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/09 10:41:02 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:21:44 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
+
 /*
 DESCRIPTION
      The strchr() function locates the first occurrence of c (converted to a
@@ -25,7 +26,33 @@ RETURN VALUES
      The functions strchr() and strrchr() return a pointer to the located char-
      acter, or NULL if the character does not appear in the string.
 	*/
-char*	ft_strrchr()
+char	*ft_strrchr(const char *s, int c)
 {
-	
+	size_t	len;
+
+	len = ft_strlen(s);
+	while (len >= 0)
+	{
+		if (s[len] == (c))
+		{
+			return ((char *)&s[len]);
+		}
+		len--;
+	}
+	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char	*test;
+// 	int		c;
+// 	char	*result;
+// 	char	*result2;
+
+// 	test = "Hollo";
+// 	c = 'o';
+// 	result = ft_strrchr(test, c);
+// 	printf("%p\n", result);
+// 	result2 = strrchr(test, c);
+// 	printf("%p", result2);
+// }

@@ -1,13 +1,13 @@
 cc = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
-ARFLAG = rcs
+ARFLAG = rc
 
 NAME = libft.a
-SRC_DIR = .
-INC_DIR = .
-CUR_DIR = $(shell pwd)
-
+# SRC_DIR = .
+# INC_DIR = .
+# CUR_DIR = $(shell pwd)
+# MY_SOURCES = $(wildcard *.c)
 MY_SOURCES = \
 	ft_isalpha.c \
 	ft_isdigit.c \
@@ -34,14 +34,18 @@ MY_SOURCES = \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
+	ft_putnbr_fd.c 
 	
-My_OBJECTS = $(MY_SOURCES:.c=.o)
+MY_OBJECTS = $(MY_SOURCES:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(MY_OBJECTS)
+	@echo "Objects: $(MY_OBJECTS)"
 		$(AR) $(ARFLAG) $(NAME) $(MY_OBJECTS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
 	rm -f $(MY_OBJECTS)
