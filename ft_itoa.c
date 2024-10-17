@@ -5,52 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 13:36:43 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 15:51:35 by poverbec         ###   ########.fr       */
+/*   Created: 2024/10/16 11:10:33 by poverbec          #+#    #+#             */
+/*   Updated: 2024/10/16 16:22:55 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
+static size_t	ft_findlen(int n);
+
 char	*ft_itoa(int n)
 {
 	char	*nbr;
-	int		isneg;
-	int		len;
+	size_t	len;
+	int		i;
 
-	isneg = 1 if (n < 0)
-	{
-		isneg *= -1;
-	}
-	return (isneg + nbr);
-	nbr = (*char)malloc((len + isneg + 1) * (sizeof(int)));
+	i = 0;
+	len = ft_findlen(n);
+	nbr = (char *)malloc((len + 1) * (sizeof(char)));
 	if (nbr == NULL)
-	{
 		return (NULL);
-	}
-	nbr[len + isneg];
-	return nbr
-}
-
-char	ft_findlen(int len)
-{
-	char	*str;
-
-	if (len > 9)
+	if (n < 0)
 	{
-		str++;
-		len = ft_flindlen(len / 10)
+		nbr[i++] = '-';
+		n = -n;
 	}
-	return (str)
+	while (n > 0)
+	{
+		len--;
+		nbr[len] = ((n % 10) + '0');
+		n /= 10;
+		i++;
+	}
+	return (nbr[i] = '\0', nbr);
 }
 
-int	main(void)
+size_t	ft_findlen(int n)
 {
-	int n;
-	char *str;
+	size_t	len;
 
-	n = -123;
-	str = ft_itoa(n)
-		printf("%s", str)
-			free(nbr);
+	len = 0;
+	if (n < 0)
+	{
+		len = 1;
+		n *= -1;
+	}
+	while (n > 9)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len + 1);
 }
+
+// int	main(void)
+// {
+// 	int		n;
+// 	char	*str;
+
+// 	n = -12345;
+// 	str = ft_itoa(n);
+// 	printf("%s", str);
+// 	free(str);
+// }
