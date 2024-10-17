@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:32:49 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/16 16:31:04 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/17 12:48:44 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,24 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*a;
 	size_t			i;
 
-	a = (unsigned char *)c;
+	a = b;
 	i = 0;
 	while (i < len)
 	{
-		b++;
+		a[i] = (unsigned char) c;
+		i++;
 	}
 	return(b);
 }
+
+// int main(void)
+// {
+//     char str[50] = "Hello, World!"; // Initial string
+//     printf("Original string: %s\n", str);
+
+//     // Fill the first 5 bytes of str with 'X'
+//     // ft_memset(str, 'X', 5);
+// 	memset((str, 'X', 5));
+	
+// 	printf("%s",str);
+// }

@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 19:17:05 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/17 15:28:18 by poverbec         ###   ########.fr       */
+/*   Created: 2024/10/17 15:22:34 by poverbec          #+#    #+#             */
+/*   Updated: 2024/10/17 15:48:03 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-/*
-The	isascii(void) function tests for an ASCII character, 
-which is any character between 0 and octal 0177 inclusive.
-Non-zero if c is ascii, true 
-zero if not. false
-*/
-int	ft_isascii(int a)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	if (a == 0)
-	{
-		return (1);
-	}
-	if (a > 0 && a <= 127)
-	{
-		return (a);
-	}
-	return (0);
+	char *newstr;
+	
+	int i;
+	
+	newstr = (char*)malloc(l(sizeof(char))
 }

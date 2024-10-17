@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 19:17:05 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/17 15:28:18 by poverbec         ###   ########.fr       */
+/*   Created: 2024/10/17 13:04:04 by poverbec          #+#    #+#             */
+/*   Updated: 2024/10/17 13:18:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-/*
-The	isascii(void) function tests for an ASCII character, 
-which is any character between 0 and octal 0177 inclusive.
-Non-zero if c is ascii, true 
-zero if not. false
-*/
-int	ft_isascii(int a)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (a == 0)
+	unsigned char *s1check;
+	unsigned char *s2check;
+	size_t i;
+
+	i = 0;
+	s1check = (unsigned char *)s1;
+	s2check = (unsigned char *)s2;
+	while (i < n)
 	{
-		return (1);
-	}
-	if (a > 0 && a <= 127)
-	{
-		return (a);
+		if (s1check[i] != s2check[i])
+			return ((s1check[i] - s2check[i]));
+		i++;
 	}
 	return (0);
 }

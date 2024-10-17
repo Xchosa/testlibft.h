@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 19:17:05 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/17 15:28:18 by poverbec         ###   ########.fr       */
+/*   Created: 2024/10/17 13:22:20 by poverbec          #+#    #+#             */
+/*   Updated: 2024/10/17 15:22:58 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-/*
-The	isascii(void) function tests for an ASCII character, 
-which is any character between 0 and octal 0177 inclusive.
-Non-zero if c is ascii, true 
-zero if not. false
-*/
-int	ft_isascii(int a)
+char	*ft_strdup(const char *s1)
 {
-	if (a == 0)
+	char	*cpys1;
+	int		len;
+	int		i;
+
+	i = 0;
+	len = strlen(s1);
+	cpys1 = (char *)malloc((len + 1) * (sizeof(char)));
+	if (cpys1 == NULL)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		return (1);
+		cpys1[i] = s1[i];
+		i++;
 	}
-	if (a > 0 && a <= 127)
-	{
-		return (a);
-	}
-	return (0);
+	cpys1[i] = '\0';
+	return (cpys1);
 }

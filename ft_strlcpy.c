@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:52:57 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/16 15:35:29 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:40:29 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,21 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	isrc;
 
-	i = '0';
-	while (i < dstsize)
+	i = 0;
+	isrc = 0;
+
+	if(dstsize)
+	
+	while (i < dstsize && src[isrc] != '\0')
 	{
-		dest[i] = src[i];
+		dest[i] = src[isrc];
+		isrc++;
 		i++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (isrc);
 }
 
 // int	main(int argc, char **argv)
