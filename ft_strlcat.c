@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:32:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/15 14:37:05 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/18 19:14:17 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,36 +23,40 @@
 */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	len;
-	size_t	lendest;
+	size_t	srclen;
+	size_t	dstlen;
 	size_t	i;
 
 	i = 0;
-	len = ft_strlen(src);
-	lendest = ft_strlen(dst);
-	if (lendest > dstsize || dstsize == '\0')
+	srclen = ft_strlen(src);
+	dstlen = ft_strlen(dst);
+	if (dstsize == 0)
+		return (srclen);
+	if (dstlen >= dstsize)
 	{
-		return (1);
+		return (dstsize + srclen);
 	}
-	while (i < len)
+	while ((dstlen + i < dstsize -1) && (src[i] != '\0'))
 	{
-		dst[lendest + i] = src[i];
+		dst[dstlen+i] = src[i];
 		i++;
 	}
-	dst[lendest + i] = '\0';
-	return (lendest + i);
+	if(dstlen + i < dstsize)
+		dst[dstlen] = '\0';
+	return (dstlen + (srclen -i));
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	char	a[100];
+dst[i]
 
-// 	a[100] = "Hallo";
-// 	if (argc == 2)
+while(dstsize[--i])
+
+p
+// return (dstlen + (srclen-i));// what they tried to concatenate 
+// srclen - the actual copied amout of characters taken 
+// while ((dstsize > 1) && (src[i] != '\0'))
 // 	{
-// 		printf("%s\n", a);
-// 		ft_strlcat(a, argv[1]);
-// 		printf("%s", a);
-// 	}
-// 	return (0);
-// }
+// 		dst[dstlen] = src[i];
+// 		dstsize--;
+// 		dstlen++;
+// 		i++;
+// 	

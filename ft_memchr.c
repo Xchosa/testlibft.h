@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:31:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:04:39 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:04:25 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			index;
 	unsigned char	*str;
+	unsigned char	cchar;
 
 	str = (unsigned char *)s;
+	cchar = (unsigned char)c;
 	index = 0;
 	while (index < n)
 	{
-		if (str[index] == c)
+		if (str[index] == cchar)
 		{
 			return (&str[index]);
 		}

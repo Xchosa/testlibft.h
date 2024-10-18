@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:22:36 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/17 15:28:34 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:06:07 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,26 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i = len;
 		while (i > 0)
 		{
-			dstchar[i] = srcchar[i];
 			i--;
+			dstchar[i] = srcchar[i];
 		}
 	}
 	return (dst);
 }
 
-// #include <string.h>
-
 // int	main(void)
 // {
-// 	char	desttest[];
-// 	char	srctest[];
+// 	char	desttest[10] = "hellozzz";  // Use a character array
+// 	char	srctest[10] = "world";      // Use a character array
 // 	size_t	len;
 
-// 	desttest[] = "hellozzz";
-// 	srctest[] = "world";
 // 	len = 4;
 // 	ft_memmove(desttest, srctest, len);
-// 	printf("Result eigene %s\n", desttest);
+// 	printf("Result eigene: %s\n", desttest);
+	
+// 	// Resetting desttest for original memmove test
+// 	strcpy(desttest, "hellozzz");
+	
 // 	memmove(desttest, srctest, len);
-// 	printf("Result original %s", desttest);
+// 	printf("Result original: %s\n", desttest);
 // }

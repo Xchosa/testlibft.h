@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:02:59 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/17 12:14:03 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/17 16:54:23 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (subsubstr);
 }
 
-int	main(void)
-{
-	int		start;
-	char	*substring;
-	char	*str;
+// int	main(void)
+// {
+// 	int		start;
+// 	char	*substring;
+// 	char	*str;
 
-	// char *testsub;
-	str = "123test";
-	start = '3';
-	// testsub = substr(str, start, 9);
-	substring = ft_substr(str, start, 9);
-	printf("%s", substring);
-}
+// 	// char *testsub;
+// 	str = "123test";
+// 	start = '3';
+// 	// testsub = substr(str, start, 9);
+// 	substring = ft_substr(str, start, 9);
+// 	printf("%s", substring);
+// }
