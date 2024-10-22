@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:02:59 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/17 16:54:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:41:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subsubstr;
 	size_t	strleng;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	strleng = ft_strlen(s);
-	if (start >= strleng)
-		return (NULL);
-	subsubstr = (char *)malloc((strleng + 1) * (sizeof(char)));
+	if (start > strleng)
+	{
+		subsubstr = ft_calloc(1, sizeof(char));
+		return (subsubstr);
+	}
+	subsubstr = ft_calloc((strleng + 1), (sizeof(char)));
 	if (subsubstr == NULL)
 		return (NULL);
-	while ((s[start] != '\0') && (start < len))
+	
+	while ((s[start] != '\0') && (i < len))
 	{
 		subsubstr[i] = s[start];
 		i++;
@@ -33,17 +37,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (subsubstr);
 }
-
 // int	main(void)
 // {
-// 	int		start;
 // 	char	*substring;
 // 	char	*str;
 
 // 	// char *testsub;
-// 	str = "123test";
-// 	start = '3';
-// 	// testsub = substr(str, start, 9);
-// 	substring = ft_substr(str, start, 9);
+// 	str = "";
+// 	// testsub = substr(str, start, );
+// 	substring = ft_substr(str, 400, 20);
 // 	printf("%s", substring);
 // }

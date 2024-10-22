@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:39:06 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/15 11:21:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:19:19 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,22 @@ RETURN VALUES
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	len;
+	char	*str;
+	char	b;
 
+	b = (char)c;
 	len = ft_strlen(s);
-	while (len >= 0)
+	str = (char *)s + len - 1;
+	if (b == '\0')
+		return (str + 1);
+	while (*s)
 	{
-		if (s[len] == (c))
+		if (*str == b)
 		{
-			return ((char *)&s[len]);
+			return (str);
 		}
-		len--;
+		str--;
+		s++;
 	}
 	return (NULL);
 }

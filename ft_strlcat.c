@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:32:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/18 19:14:17 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/19 20:41:47 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dstlen + (srclen -i));
 }
 
-dst[i]
+// dst[i]
 
-while(dstsize[--i])
+// while(dstsize[--i])
 
-p
-// return (dstlen + (srclen-i));// what they tried to concatenate 
+// p
+// // return (dstlen + (srclen-i));// what they tried to concatenate 
 // srclen - the actual copied amout of characters taken 
 // while ((dstsize > 1) && (src[i] != '\0'))
 // 	{

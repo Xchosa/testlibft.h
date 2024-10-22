@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:08:42 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:03:30 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/19 22:02:42 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,6 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	ft_bzero(ptr, i);
 	return (ptr);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*prt;
-	size_t			i;
-
-	prt = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		prt[i] = '\0';
-		i++;
-	}
 }
 // int	main(void)
 // {
