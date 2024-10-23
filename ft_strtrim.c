@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:53:31 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/22 15:51:39 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:23:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,44 @@ static size_t	ft_count_set(char const *s1, char const *set);
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	a;
-	size_t	b;
-	size_t	c;
+	size_t	z;
 	char	*newstr;
 	size_t	s1_len_trimmed;
+	size_t	s1_len;
 
+	s1_len = ft_strlen(s1);
+	if (!s1 || !set)
+		return (NULL);
+	if (s1_len == 0)
+		return (char*)s1;
 	a = 0;
-	b = 0;
-	c = 0;
+	z = s1_len -1;
+	
+	while(s1[a] && )
+
+
+	
 	s1_len_trimmed = (ft_strlen(s1) - ft_count_set(s1, set));
 	// printf("%zu\n", s1_len_trimmed);
 	newstr = ft_calloc((s1_len_trimmed +1),(sizeof(char)));
 	if (newstr == NULL)
 		return (NULL);
-	newstr = ft_strchr()
-	t_strrchr(const char *s, int c)
 	
-	
-	newstr[c] = '\0';
 	return (newstr);
 }
 
+size_t ft_in_set_start()
+{
+	if s1[a] == set[b]
+}
 
-static size_t	ft_count_set(char const *s1, char const *set)
+size_t ft_in_set_end()
+{
+	
+}
+
+
+	static size_t	ft_count_set(char const *s1, char const *set)
 {
 	size_t	a;
 	size_t	b;
@@ -94,3 +109,4 @@ static size_t	ft_count_set(char const *s1, char const *set)
 // 	a++;
 // 	b = 0;
 // 	}
+

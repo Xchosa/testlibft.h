@@ -42,8 +42,7 @@ MY_SOURCES = ft_atoi.c	\
 			ft_strmapi.c \
 			# ft_putendl_fd.c \
 			ft_putnbr_fd.c \
-			
-			# ft_split.c \
+			ft_split.c \
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 
