@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:14 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/22 09:47:37 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:00:08 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,9 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
 	char	b;
-
+	
 	b = (char)c;
 	str = (char *)s;
-	i = 0;
-	if (c == '\0')
-	{
-		return (str + 1);
-	}
 	while (*s)
 	{
 		if (*str == b)
@@ -46,6 +41,10 @@ char	*ft_strchr(const char *s, int c)
 		}
 		str++;
 		s++;
+	}
+	if (c == '\0')
+	{
+		return (str);
 	}
 	return (NULL);
 }

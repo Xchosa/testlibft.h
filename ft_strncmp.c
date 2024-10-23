@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:40:37 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/15 12:18:52 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:18:13 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	index;
 
 	index = 0;
-	while (index <= n)
+	if (n == 0)
+		return (0);
+	while (index < n && (s1[index] != '\0' || s2[index] != '\0'))
 	{
-		if ((s1[index] != '\0') || (s2[index] != '\0'))
-		{
-			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
-		}
 		if (s1[index] != s2[index])
-		{
-			return (s1[index] - s2[index]);
-		}
+			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
 		index++;
 	}
 	return (0);
@@ -50,13 +46,13 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // int	main(void)
 // {
-// 	const char *str1 = "hello";
-// 	const char *str2 = "hella";
+// 	const char *str1 = "he";
+// 	const char *str2 = "hel";
 // 	size_t u = 4;
 
 // 	int result = ft_strncmp(str1, str2, u);
-// 		printf("The strings are equal up to %ld characters.\n", u);
-// 	else if (result < 0)
+// 		printf("The strings are equal up to %d characters.\n", result);
+// 	if (result < 0)
 // 		printf("str1 is less than str2.\n");
 // 	else
 // 		printf("str1 is greater than str2.\n");

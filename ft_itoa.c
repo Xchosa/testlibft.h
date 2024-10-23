@@ -5,42 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 11:10:33 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/16 16:22:55 by poverbec         ###   ########.fr       */
+/*   Created: 2024/10/22 15:02:07 by poverbec          #+#    #+#             */
+/*   Updated: 2024/10/22 15:30:11 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-static size_t	ft_findlen(int n);
+static size_t	ft_findlen(long n);
 
 char	*ft_itoa(int n)
 {
 	char	*nbr;
 	size_t	len;
 	int		i;
+	long	n_long;
 
+	n_long = (long)n;
 	i = 0;
-	len = ft_findlen(n);
-	nbr = (char *)malloc((len + 1) * (sizeof(char)));
+	len = ft_findlen(n_long);
+	nbr = calloc((len + 1), (sizeof(char)));
 	if (nbr == NULL)
 		return (NULL);
-	if (n < 0)
+	if (n_long == 0)
+		return (nbr[0] = '0', nbr);
+	if (n_long < 0)
 	{
 		nbr[i++] = '-';
-		n = -n;
+		n_long = -n_long;
 	}
-	while (n > 0)
+	while (n_long > 0)
 	{
-		len--;
-		nbr[len] = ((n % 10) + '0');
-		n /= 10;
+		nbr[--len] = ((n_long % 10) + '0');
+		n_long /= 10;
 		i++;
 	}
 	return (nbr[i] = '\0', nbr);
 }
 
-size_t	ft_findlen(int n)
+size_t	ft_findlen(long n)
 {
 	size_t	len;
 
@@ -57,14 +60,9 @@ size_t	ft_findlen(int n)
 	}
 	return (len + 1);
 }
-
-// int	main(void)
+// int main()
 // {
-// 	int		n;
-// 	char	*str;
-
-// 	n = -12345;
-// 	str = ft_itoa(n);
+// 	char *str;
+// 	str= ft_itoa(-2147483648);
 // 	printf("%s", str);
-// 	free(str);
 // }

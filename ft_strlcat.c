@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:32:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/19 20:41:47 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:12:20 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[dstlen+i] = src[i];
 		i++;
 	}
-	if(dstlen + i < dstsize)
-		dst[dstlen] = '\0';
-	return (dstlen + (srclen -i));
+	dst[dstlen + i] = '\0';
+	return (dstlen + srclen);
 }
 
 // dst[i]
