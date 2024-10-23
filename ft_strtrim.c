@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:53:31 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/23 13:23:04 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:03:59 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	z = s1_len -1;
 	
 	while(s1[a] && )
+
+
+
 
 
 	
