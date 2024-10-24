@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:21:58 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/24 10:19:56 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:42:18 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,15 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	control_malloc_substr = ft_cpy_s_parts(s, c, counter_substr,
 			splited_string);
-	if (control_malloc_substr != 0)
+	if (control_malloc_substr > 0)
+	{
+		while (control_malloc_substr > 0)
+		{
+			free(splited_string[--control_malloc_substr]);
+		}
+		free(splited_string);
 		return (NULL);
+	}
 	splited_string[counter_substr] = NULL;
 	return (splited_string);
 }
@@ -66,27 +73,27 @@ int	ft_cpy_s_parts(char const *s, char c, size_t counter_substr,
 	size_t	sub_len;
 
 	i = 0;
-	b = 0;
 	a = 0;
-	while (s[i] != '\0')
+	while (s[i] != '\0' && a < counter_substr)
 	{
-		while (s[i++] != c && a <= counter_substr)
+		while (s[i] == c)
+			i++;
+		sub_len = ft_check_len_s_a(s + i, c);
+		if (s[i] != '\0')
 		{
-			sub_len = ft_check_len_s_a(&s[i], c);
-			splited_string[a] = (char *)malloc((sub_len +1)* sizeof(char));
+			splited_string[a] = (char *)malloc((sub_len + 1) * sizeof(char));
 			if (splited_string[a] == NULL)
-				return (1);
+				return (a);
+			b = 0;
 			while (s[i] != c && s[i] != '\0')
-			{
 				splited_string[a][b++] = s[i++];
-			}
 			splited_string[a][b] = '\0';
 			a++;
-			b = 0;
 		}
 	}
 	return (0);
 }
+
 static size_t	ft_check_len_s_a(char const *s, char c)
 {
 	size_t	s_len;
@@ -98,16 +105,3 @@ static size_t	ft_check_len_s_a(char const *s, char c)
 	}
 	return (s_len);
 }
-// int main(void)
-// {
-// 	int i:
-
-//  char **result = ft_split("ich bin ein Star ' ');
-//     for (int i = 0; result[i] != NULL; i++)
-//         printf("Split[%d]: %s\n", i, result[i]);
-//     for (int i = 0; result[i] != NULL; i++)
-//         free(result[i]);
-
-//     free(result);
-//     return (0);
-// }
