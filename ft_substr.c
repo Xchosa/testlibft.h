@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:02:59 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/21 11:41:52 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/24 19:40:18 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > strleng)
 	{
 		subsubstr = ft_calloc(1, sizeof(char));
+		subsubstr[i] = '\0';
 		return (subsubstr);
 	}
 	subsubstr = ft_calloc((strleng + 1), (sizeof(char)));
 	if (subsubstr == NULL)
 		return (NULL);
-	
 	while ((s[start] != '\0') && (i < len))
 	{
 		subsubstr[i] = s[start];
 		i++;
 		start++;
 	}
+	subsubstr[i] = '\0';
 	return (subsubstr);
 }
 // int	main(void)

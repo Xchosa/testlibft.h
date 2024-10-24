@@ -6,12 +6,20 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:22:36 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/18 15:06:07 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:10:30 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
+/*
+DESCRIPTION
+     The memmove() function copies len bytes from string src to string dst.  The two strings may overlap; the copy is always done
+     in a non-destructive manner.
+
+RETURN VALUES
+     The memmove() function returns the original value of dst.
+*/
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*dstchar;
@@ -21,6 +29,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	dstchar = (unsigned char *)dst;
 	srcchar = (unsigned char *)src;
 	i = 0;
+	if (dstchar == NULL && srcchar == NULL)
+		return (NULL);
 	if (dstchar < srcchar)
 	{
 		while (len > i)
@@ -50,10 +60,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	len = 4;
 // 	ft_memmove(desttest, srctest, len);
 // 	printf("Result eigene: %s\n", desttest);
-	
+
 // 	// Resetting desttest for original memmove test
 // 	strcpy(desttest, "hellozzz");
-	
+
 // 	memmove(desttest, srctest, len);
 // 	printf("Result original: %s\n", desttest);
 // }
