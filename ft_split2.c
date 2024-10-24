@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:21:58 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/24 15:48:59 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:50:37 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static size_t	ft_search_c(char const *s, char c);
 static int		ft_cpy_s_parts(char const *s, char c, size_t counter_substr,
 					char **splited_string);
-static void		ft_free_slot(char **split, size_t counter_substr);
 static size_t	ft_check_len_s_a(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
@@ -24,22 +23,25 @@ char	**ft_split(char const *s, char c)
 	size_t	counter_substr;
 	size_t	control_malloc_substr;
 
+	if (!s)
+		return (NULL);
 	counter_substr = ft_search_c(s, c);
 	splited_string = (char **)malloc((counter_substr + 1) * sizeof(char *));
-	if (!splited_string || !s)
+	if (splited_string == NULL)
 		return (NULL);
-	while (s[counter_substr])
-	{
-		if(s[counter_substr] != c)
-			{
-				if (!ft_cpy_s_parts(s, c, counter_substr, splited_string))
-					return (ft_free_slot(splited_string, counter_substr), NULL);
-	}
-	ft_cpy_s_parts(s, c, counter_substr,
+	control_malloc_substr = ft_cpy_s_parts(s, c, counter_substr,
 			splited_string);
+	if (control_malloc_substr > 0)
+	{
+		while (control_malloc_substr > 0)
+		{
+			free(splited_string[--control_malloc_substr]);
+		}
+		free(splited_string);
+		return (NULL);
+	}
 	splited_string[counter_substr] = NULL;
 	return (splited_string);
-}
 }
 
 static size_t	ft_search_c(char const *s, char c)
@@ -76,30 +78,20 @@ int	ft_cpy_s_parts(char const *s, char c, size_t counter_substr,
 	{
 		while (s[i] == c)
 			i++;
+		sub_len = ft_check_len_s_a(s + i, c);
 		if (s[i] != '\0')
 		{
-			sub_len = ft_check_len_s_a(s + i, c);
 			splited_string[a] = (char *)malloc((sub_len + 1) * sizeof(char));
-			if (!splited_string[a])
-				ft_free_slot(split, counter_substr)
-					b = 0;
-			while (s[i] != c && s[i])
+			if (splited_string[a] == NULL)
+				return (a);
+			b = 0;
+			while (s[i] != c && s[i] != '\0')
 				splited_string[a][b++] = s[i++];
 			splited_string[a][b] = '\0';
 			a++;
 		}
 	}
 	return (0);
-}
-
-static void	ft_free_slot(char **split, size_t counter_substr)
-{
-	while (counter_substr > 0)
-	{
-		free(split[counter_substr]);
-		counter_substr--;
-	}
-	free(split);
 }
 
 static size_t	ft_check_len_s_a(char const *s, char c)
