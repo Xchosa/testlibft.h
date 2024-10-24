@@ -6,81 +6,83 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:53:31 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/23 14:03:59 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:39:16 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-static size_t	ft_count_set(char const *s1, char const *set);
+static size_t	ft_in_set_start(char const *s1, char const *set);
+static size_t	ft_in_set_end(char const *s1, char const *set, size_t s1_len);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	a;
-	size_t	z;
+	size_t	start;
+	size_t	end;
 	char	*newstr;
-	size_t	s1_len_trimmed;
+	size_t	set_len;
 	size_t	s1_len;
+	int		i;
 
+	i = 0;
 	s1_len = ft_strlen(s1);
-	if (!s1 || !set)
+	set_len = ft_strlen(set);
+	start = ft_in_set_start(s1, set);
+	end = ft_in_set_end(s1, set, s1_len);
+	if (!s1 || !set) 
 		return (NULL);
 	if (s1_len == 0)
-		return (char*)s1;
-	a = 0;
-	z = s1_len -1;
-	
-	while(s1[a] && )
-
-
-
-
-
-	
-	s1_len_trimmed = (ft_strlen(s1) - ft_count_set(s1, set));
-	// printf("%zu\n", s1_len_trimmed);
-	newstr = ft_calloc((s1_len_trimmed +1),(sizeof(char)));
+		return (ft_strdup(""));
+	if (start > end)
+		return(ft_strdup(""));
+	newstr = ft_calloc((end - start +2 ), (sizeof(char)));
 	if (newstr == NULL)
 		return (NULL);
-	
+	while (start <= end)
+		newstr[i++] = s1[start++];
 	return (newstr);
 }
 
-size_t ft_in_set_start()
+static size_t	ft_in_set_start(char const *s1, char const *set)
 {
-	if s1[a] == set[b]
-}
+	size_t	start;
+	size_t	i;
 
-size_t ft_in_set_end()
-{
-	
-}
-
-
-	static size_t	ft_count_set(char const *s1, char const *set)
-{
-	size_t	a;
-	size_t	b;
-	size_t	char_to_trim;
-
-	a = 0;
-	b = 0;
-	char_to_trim = 0;
-	while (s1[a] != '\0')
+	start = 0;
+	i = 0;
+	while (s1[start] != '\0' && set[i] != '\0')
 	{
-		while (s1[a] != set[b] && set[b] != '\0')
+		if (s1[start] == set[i])
 		{
-			b++;
+			start++;
+			i = 0;
 		}
-		if (s1[a] == set[b])
-		{
-			char_to_trim++;
-		}
-		a++;
-		b = 0;
+		else
+			i++;
 	}
-	return (char_to_trim);
+	return (start);
 }
+
+static size_t	ft_in_set_end(char const *s1, char const *set, size_t s1_len)
+{
+	size_t	end;
+	size_t	i;
+	i = 0;
+
+	end = s1_len -1;
+	while (s1[end] != '\0' && set[i] != '\0' && end > 0)
+	{
+		if (s1[end] == set[i])
+		{
+			i = 0;
+			end--;
+		}
+		else
+			i++;
+	}
+	return (end);
+}
+
 
 // int	main(void)
 // {
@@ -88,28 +90,11 @@ size_t ft_in_set_end()
 // 	char	*set;
 // 	char	*trimmed;
 
-// 	s1 = "hello world";
-// 	set = "l";
+// 	s1 = "edllo worlde";
+// 	set = "ed";
 // 	trimmed = ft_strtrim(s1, set);
 // 	printf("Trimmed string: '%s'\n", trimmed);
 // 	free(trimmed);
 // 	return (0);
 // }
-
-// while (s1[a] != '\0')
-// 	{
-// 		while (set[b] != '\0')
-// 		{
-// 			while (s1[a] == set[b])
-// 			{
-// 				a++;
-// 			}
-// 			b++;
-// 			a++;
-// 			if(s1[a] == set[b])
-// 				b++;
-// 		}
-// 	a++;
-// 	b = 0;
-// 	}
 

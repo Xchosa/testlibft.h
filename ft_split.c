@@ -6,86 +6,108 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:21:58 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/19 19:29:06 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:19:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "./libft.h"
 
-char **ft_split(char const *s, char c)
-{
-	size_t i;
-	char **spliting_string;
-	int a;
-	int b;
-	char *s_sep_as_NULL;
-	int *counters_septerator;
-	size_t str_len;
+static size_t	ft_search_c(char const *s, char c);
+static int		ft_cpy_s_parts(char const *s, char c, size_t counter_substr,
+					char **splited_string);
+static size_t	ft_check_len_s_a(char const *s, char c);
 
-	a = 0;
-	b = 0;
-	s_sep_as_NULL= ft_detect_c(s,c)
-	
-	a = ft_counting_strs(s_sep_as_NULL);
-	while (i <= a)
-		{
-			ft_malloc_str(seperator_pos,i)
-			a++;
-		}
-	
-}
+char	**ft_split(char const *s, char c)
+{
+	char	**splited_string;
+	size_t	counter_substr;
+	size_t	control_malloc_substr;
 
-char *ft_detect_c(char const *s, char c)
-{
-	char *seperator_pos;
-	int counter_seperator;
-	int i;
-	i = 0;
-	int a;
-	int b;
-	int counter;
-	while(s[i] != '\0')
-	{
-		while (s[i] == c)
-		{
-				counter_seperator++;
-				seperator_pos[i] = '\0';
-		}
-		i++;
-	}
-}
-int ft_counting_strs(char *seperator_pos, int counter_seperator)
-{
-	int i;
-	i = 0;
-	int nbr_str;
-	nbr_str = 0;
-	while (i <= counter_seperator)
-	{
-		while(seperator_pos[i++] == '\0')
-		{
-			counter_seperator--;
-		}
-		nbr_str++;
-	}
-	return(nbr_str);
-}
-
-char *ft_malloc_str(const char *s, char *seperator_pos, int a)
-{
-	int i;
-	char *newstr;
-	int strlen;
-	b = 0;
-	
-	strlen	= ft_strlen(seperator_pos);
-	newstr[a]= (char*)malloc(strlen *(sizeof(char*)));
-	if(newstr[a]= NULL)
+	if (!s)
 		return (NULL);
-	while (b <= strlen)
+	counter_substr = ft_search_c(s, c);
+	splited_string = (char **)malloc((counter_substr + 1) * sizeof(char *));
+	if (splited_string == NULL)
+		return (NULL);
+	control_malloc_substr = ft_cpy_s_parts(s, c, counter_substr,
+			splited_string);
+	if (control_malloc_substr != 0)
+		return (NULL);
+	splited_string[counter_substr] = NULL;
+	return (splited_string);
+}
+
+static size_t	ft_search_c(char const *s, char c)
+{
+	size_t	i;
+	size_t	counter_substr;
+
+	i = 0;
+	counter_substr = 0;
+	while (s[i] != '\0')
 	{
-		newstr[a][b] = s[i]
+		if (s[i] != c)
+		{
+			counter_substr++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+		}
+		else
+			i++;
+	}
+	return (counter_substr);
 }
-	
+int	ft_cpy_s_parts(char const *s, char c, size_t counter_substr,
+		char **splited_string)
+{
+	size_t	i;
+	size_t	a;
+	size_t	b;
+	size_t	sub_len;
+
+	i = 0;
+	b = 0;
+	a = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i++] != c && a <= counter_substr)
+		{
+			sub_len = ft_check_len_s_a(&s[i], c);
+			splited_string[a] = (char *)malloc((sub_len +1)* sizeof(char));
+			if (splited_string[a] == NULL)
+				return (1);
+			while (s[i] != c && s[i] != '\0')
+			{
+				splited_string[a][b++] = s[i++];
+			}
+			splited_string[a][b] = '\0';
+			a++;
+			b = 0;
+		}
+	}
+	return (0);
 }
+static size_t	ft_check_len_s_a(char const *s, char c)
+{
+	size_t	s_len;
+
+	s_len = 0;
+	while (s[s_len] != c && s[s_len] != '\0')
+	{
+		s_len++;
+	}
+	return (s_len);
+}
+// int main(void)
+// {
+// 	int i:
+
+//  char **result = ft_split("ich bin ein Star ' ');
+//     for (int i = 0; result[i] != NULL; i++)
+//         printf("Split[%d]: %s\n", i, result[i]);
+//     for (int i = 0; result[i] != NULL; i++)
+//         free(result[i]);
+
+//     free(result);
+//     return (0);
+// }
