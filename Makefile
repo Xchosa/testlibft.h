@@ -4,11 +4,6 @@ AR = ar
 ARFLAG = rc
 
 NAME = libft.a
-# SRC_DIR = .
-# INC_DIR = .
-# CUR_DIR = $(shell pwd)
-# MY_SOURCES = $(wildcard *.c)
-
 
 MY_SOURCES = ft_atoi.c	\
 			ft_isalpha.c \
