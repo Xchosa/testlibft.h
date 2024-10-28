@@ -6,16 +6,14 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:27:49 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/28 12:44:15 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:51:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 int		ft_atoi(const char *str);
