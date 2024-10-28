@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:32:19 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/22 10:12:20 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:16:22 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	{
 		return (dstsize + srclen);
 	}
-	while ((dstlen + i < dstsize -1) && (src[i] != '\0'))
+	while ((dstlen + i < dstsize - 1) && (src[i] != '\0'))
 	{
-		dst[dstlen+i] = src[i];
+		dst[dstlen + i] = src[i];
 		i++;
 	}
 	dst[dstlen + i] = '\0';
@@ -50,12 +50,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // while(dstsize[--i])
 
 // p
-// // return (dstlen + (srclen-i));// what they tried to concatenate 
-// srclen - the actual copied amout of characters taken 
+// // return (dstlen + (srclen-i));// what they tried to concatenate
+// srclen - the actual copied amout of characters taken
 // while ((dstsize > 1) && (src[i] != '\0'))
 // 	{
 // 		dst[dstlen] = src[i];
 // 		dstsize--;
 // 		dstlen++;
 // 		i++;
-// 	
+//

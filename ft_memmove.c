@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:22:36 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/24 16:10:30 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:42:05 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 /*
 DESCRIPTION
-     The memmove() function copies len bytes from string src to string dst.  The two strings may overlap; the copy is always done
+     The memmove() function copies len bytes from string 
+		src to string dst.  The two strings may overlap; 
+		the copy is always done
      in a non-destructive manner.
 
 RETURN VALUES
      The memmove() function returns the original value of dst.
 */
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*dstchar;
@@ -33,11 +36,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	if (dstchar < srcchar)
 	{
-		while (len > i)
-		{
-			dstchar[i] = srcchar[i];
-			i++;
-		}
+		while (len > i++)
+			dstchar[i - 1] = srcchar[i - 1];
 	}
 	else
 	{

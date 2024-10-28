@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:06:09 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/22 12:29:05 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:17:09 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	needle_len;
-	
+
 	needle_len = strlen(needle);
 	i = 0;
 	if (needle_len == '\0')
-		return ((char*)haystack);
+		return ((char *)haystack);
 	while ((haystack[i] != '\0') && (i + needle_len <= len))
 	{
 		if ((ft_strncmp(haystack + i, needle, needle_len) == 0))

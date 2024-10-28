@@ -6,12 +6,16 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:02:59 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/24 19:40:18 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:57:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
+/*
+Allocates (with malloc(3)) and returns a substring from the string ’s’.
+The substring begins at index ’start’ and is of maximum size ’len’.
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subsubstr;
@@ -23,10 +27,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > strleng)
 	{
 		subsubstr = ft_calloc(1, sizeof(char));
-		subsubstr[i] = '\0';
 		return (subsubstr);
 	}
-	subsubstr = ft_calloc((strleng + 1), (sizeof(char)));
+	if (len > strleng - start)
+		len = strleng - start;
+	subsubstr = ft_calloc((len + 1), (sizeof(char)));
 	if (subsubstr == NULL)
 		return (NULL);
 	while ((s[start] != '\0') && (i < len))
@@ -35,7 +40,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		start++;
 	}
-	subsubstr[i] = '\0';
 	return (subsubstr);
 }
 // int	main(void)
@@ -46,6 +50,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	// char *testsub;
 // 	str = "";
 // 	// testsub = substr(str, start, );
-// 	substring = ft_substr(str, 400, 20);
+// 	substring = ft_substr(str, 1,1);
 // 	printf("%s", substring);
 // }

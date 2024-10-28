@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:39:06 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/24 15:08:09 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:33:57 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
 
 // int	main(void)
 // {

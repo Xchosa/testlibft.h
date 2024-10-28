@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:32:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/14 17:05:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:27:57 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	len;
 	char			*newstr;
 
-	len = ft_strlen(s);
+	len = (unsigned int)ft_strlen(s);
 	i = 0;
 	newstr = (char *)malloc((len + 1) * (sizeof(char)));
 	if (newstr == NULL)
@@ -34,14 +34,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (newstr);
 }
 
-char	f(unsigned int index, char c)
-{
-	if (index % 2 == 0)
-	{
-		return (c += 32);
-	}
-	return (c);
-}
+// char	f(unsigned int index, char c)
+// {
+// 	if (index % 2 == 0)
+// 	{
+// 		return (c += 32);
+// 	}
+// 	return (c);
+// }
 
 // int	main(void)
 // {

@@ -6,41 +6,42 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:02:07 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/22 15:30:11 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:12:48 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
+/*
+Allocates (with malloc(3)) and returns a string representing 
+the integer received as an argument. Negative numbers must be handled.
+*/
 static size_t	ft_findlen(long n);
 
 char	*ft_itoa(int n)
 {
 	char	*nbr;
 	size_t	len;
-	int		i;
 	long	n_long;
 
 	n_long = (long)n;
-	i = 0;
 	len = ft_findlen(n_long);
-	nbr = calloc((len + 1), (sizeof(char)));
+	nbr = ft_calloc((len + 1), (sizeof(char)));
 	if (nbr == NULL)
-		return (NULL);
+		return (ft_calloc(1, sizeof(char)));
 	if (n_long == 0)
 		return (nbr[0] = '0', nbr);
 	if (n_long < 0)
 	{
-		nbr[i++] = '-';
+		nbr[0] = '-';
 		n_long = -n_long;
 	}
 	while (n_long > 0)
 	{
 		nbr[--len] = ((n_long % 10) + '0');
 		n_long /= 10;
-		i++;
 	}
-	return (nbr[i] = '\0', nbr);
+	return (nbr);
 }
 
 size_t	ft_findlen(long n)
