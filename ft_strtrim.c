@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:53:31 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/28 15:54:14 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/28 16:17:42 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,64 +15,6 @@
 static size_t	ft_in_set_start(char const *s1, char const *set);
 static size_t	ft_in_set_end(char const *s1, char const *set, size_t s1_len);
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	unsigned char	*ptr;
-	size_t			i;
-
-	i = count * size;
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-	ft_bzero(ptr, i);
-	return (ptr);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*prt;
-	size_t			i;
-
-	prt = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		prt[i] = '\0';
-		i++;
-	}
-}
-char	*ft_strdup(const char *s1)
-{
-	char	*cpys1;
-	int		len;
-	int		i;
-
-	i = 0;
-	len = strlen(s1);
-	cpys1 = (char *)malloc((len + 1) * (sizeof(char)));
-	if (cpys1 == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		cpys1[i] = s1[i];
-		i++;
-	}
-	cpys1[i] = '\0';
-	return (cpys1);
-}
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
@@ -125,6 +67,8 @@ static size_t	ft_in_set_end(char const *s1, char const *set, size_t s1_len)
 	size_t	i;
 
 	i = 0;
+	if (s1_len == 0)
+		return (end = 0, end);
 	end = s1_len - 1;
 	while (s1[end] != '\0' && set[i] != '\0' && end > 0)
 	{
@@ -139,16 +83,16 @@ static size_t	ft_in_set_end(char const *s1, char const *set, size_t s1_len)
 	return (end);
 }
 
-int	main(void)
-{
-	char	*s1;
-	char	*set;
-	char	*trimmed;
+// int	main(void)
+// {
+// 	char	*s1;
+// 	char	*set;
+// 	char	*trimmed;
 
-	s1 = "";
-	set = "";
-	trimmed = ft_strtrim(s1, set);
-	printf("Trimmed string: '%s'\n", trimmed);
-	free(trimmed);
-	return (0);
-}
+// 	s1 = "";
+// 	set = "";
+// 	trimmed = ft_strtrim(s1, set);
+// 	printf("Trimmed string: '%s'\n", trimmed);
+// 	free(trimmed);
+// 	return (0);
+// }
