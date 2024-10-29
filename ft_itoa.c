@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:02:07 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/28 12:12:48 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/29 08:25:08 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_itoa(int n)
 	len = ft_findlen(n_long);
 	nbr = ft_calloc((len + 1), (sizeof(char)));
 	if (nbr == NULL)
-		return (ft_calloc(1, sizeof(char)));
+		return (NULL);
 	if (n_long == 0)
 		return (nbr[0] = '0', nbr);
 	if (n_long < 0)

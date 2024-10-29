@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:22:20 by poverbec          #+#    #+#             */
-/*   Updated: 2024/10/22 14:21:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/10/29 08:15:39 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	len = strlen(s1);
+	len = ft_strlen(s1);
 	cpys1 = (char *)malloc((len + 1) * (sizeof(char)));
 	if (cpys1 == NULL)
 		return (NULL);
