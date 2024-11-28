@@ -1,8 +1,6 @@
-cc = gcc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
-ARFLAG = rc
-
 NAME = libft.a
 
 MY_SOURCES = ft_atoi.c	\
@@ -39,24 +37,34 @@ MY_SOURCES = ft_atoi.c	\
 			ft_strmapi.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
-			ft_split.c \
+			ft_split.c 
+
+MY_SOURCES_B = ft_lstnew.c \
+			ft_lstsize.c \
+			ft_lstadd_front.c 
+
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
-
-all: $(NAME)
-
-$(NAME): $(MY_OBJECTS)
-	@echo "Objects: $(MY_OBJECTS)"
-		$(AR) $(ARFLAG) $(NAME) $(MY_OBJECTS)
+MY_OBJECTS_B = $(MY_SOURCES_B:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+all: $(NAME)
+
+$(NAME): $(MY_OBJECTS)
+	$(AR) rcs $(NAME) $(MY_OBJECTS) 
+
+bonus: $(NAME) $(MY_OBJECTS_B)
+	$(AR) rcs $(NAME) $(MY_OBJECTS_B) 
+
 clean: 
 	rm -f $(MY_OBJECTS)
+	rm -f $(MY_OBJECTS_B)
 
 fclean: clean 
 	rm -f $(NAME)
 
 re: fclean all 
-		
+
+.PHONY: re clean fclean all
