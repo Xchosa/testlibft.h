@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:57:28 by poverbec          #+#    #+#             */
-/*   Updated: 2024/11/28 17:39:15 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/03 10:58:41 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,23 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
 
-	current = *lst;
 	if (new == NULL)
-		return (NULL);
+		return ;
 	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;
 	}
-	while (current->next != NULL)
+	else 
 	{
-		current = current->next;
+		current = *lst;
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		new = current->next;
 	}
-	new = current->next;
+	// ft_lstclear(current, del);
 }
+// t_list	*ft_lstlast(t_list *lst)
+

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:30:53 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/02 12:18:50 by poverbec         ###   ########.fr       */
+/*   Created: 2024/12/02 12:14:13 by poverbec          #+#    #+#             */
+/*   Updated: 2024/12/03 10:24:38 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
 /*
-Counts the number of nodes in a list.
+lst: The address of a pointer to a node.
+f: The address of the function used to iterate on the list.
+Iterates the list ’lst’ and applies the function ’f’ on the content of each node.
 */
-int	ft_lstsize(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	counter;
-
-	counter = 0;
 	while (lst != NULL)
 	{
-		counter++;
+		f(lst->content);
 		lst = lst->next;
 	}
-	return (counter);
+	return ;
 }

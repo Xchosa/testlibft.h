@@ -41,19 +41,24 @@ MY_SOURCES = ft_atoi.c	\
 
 MY_SOURCES_B = ft_lstnew.c \
 			ft_lstsize.c \
-			ft_lstadd_front.c 
+			ft_lstlast.c \
+			ft_lstadd_front.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c
 
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 MY_OBJECTS_B = $(MY_SOURCES_B:.c=.o)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# %.o: %.c
+# 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(MY_OBJECTS)
-	$(AR) rcs $(NAME) $(MY_OBJECTS) 
+	ar -rcs $(NAME) $(MY_OBJECTS) 
 
 bonus: $(NAME) $(MY_OBJECTS_B)
 	$(AR) rcs $(NAME) $(MY_OBJECTS_B) 
