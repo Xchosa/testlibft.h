@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:57:28 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/03 10:58:41 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/03 11:14:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Adds the node ’new’ at the end of the list.
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*current;
+	t_list	*last_node;
 
 	if (new == NULL)
 		return ;
@@ -27,16 +27,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	else 
+	else
 	{
-		current = *lst;
-		while (current->next != NULL)
-		{
-			current = current->next;
-		}
-		new = current->next;
+		last_node = ft_lstlast(*lst);
+		last_node->next = new;
 	}
-	// ft_lstclear(current, del);
 }
-// t_list	*ft_lstlast(t_list *lst)
-
